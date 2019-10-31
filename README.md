@@ -1,11 +1,15 @@
 # CI
 continuous integration
 
-Idea is to have CI available for all eduVPN clients and server releases. Focus is to test end-to-end if eduVPN is working. In essence it means the app should be able to sucessfully setup a VPN connection.
+Idea is to have CI available for all eduVPN clients and server releases. Focus is to test end-to-end if eduVPN is working. In essence it means clients/apps should be able to sucessfully setup a VPN connection.
 
+## Testing individual client codebases
+Each client codebase (e.g. Android, iOS, Linux, OSX) should be able to run tests against a readily available test environment. At least initially this is likely to be the development test server. The tests would include a number of runtime behaviours to check the clients can handle routine failures and outages correctly (e.g. by notifying the user when problems occur).
 
-**Development test server**
-vpn.spoor.nu
+Deeper end-to-end testing is a longer-term objective where the CI would spin up additional local components (the rest of the components needed to create a small, complete system).
+
+## Development test server
+`vpn.spoor.nu`
 
 The server https://vpn.spoor.nu is "special" in that it is configured to have quickly expiring tokens/certificates:
 
@@ -23,3 +27,4 @@ In order to test "refresh_tokens" one has to trigger API calls between 1 minute 
 The info.json 5 minutes flip is meant to check if the app somehow caches the info.json, which should not be done. **Warning:** when entering the server-url, the json file should exist. If else the app will give an error.
 
 In addition every 15 minutes, the server is reset, it will generate a new CA, so all existing certificates will become invalid. This is to test a "full server reinstall". The applications MUST be able to recover. This "full server reset" simulates a compromised server that is reinstalled from scratch.
+
