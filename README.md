@@ -8,7 +8,8 @@ Each client codebase (e.g. Android, iOS, Linux, OSX) should be able to run tests
 
 Deeper end-to-end testing is a longer-term objective where the CI would spin up additional local components (the rest of the components needed to create a small, complete system).
 
-## Development test server
+## Development test server
+
 `vpn.spoor.nu`
 
 The server https://vpn.spoor.nu is "special" in that it is configured to have quickly expiring tokens/certificates:
