@@ -4,7 +4,7 @@ continuous integration
 Idea is to have CI available for all eduVPN clients and server releases. Focus is to test end-to-end if eduVPN is working. In essence it means clients/apps should be able to sucessfully setup a VPN connection.
 
 ## Testing individual client codebases
-Each client codebase  (e.g. [Android](../android.md), iOS, Linux, OSX) should be able to run tests against a readily available test environment. At least initially this is likely to be the development test server. The tests would include a number of runtime behaviours to check the clients can handle routine failures and outages correctly (e.g. by notifying the user when problems occur).
+Each client codebase  (e.g. [Android](./android.md), iOS, Linux, OSX) should be able to run tests against a readily available test environment. At least initially this is likely to be the development test server. The tests would include a number of runtime behaviours to check the clients can handle routine failures and outages correctly (e.g. by notifying the user when problems occur).
 
 Deeper end-to-end testing is a longer-term objective where the CI would spin up additional local components (the rest of the components needed to create a small, complete system).
 

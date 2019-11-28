@@ -2,7 +2,7 @@
 The Android app and ecosystem means the design and implementation of the CI for the Android app will be distinct and have particular challenges and solutions. This page covers what we think and understand about these topics.
 
 ## Build Platform (CI)
-We need a build platform (CI) that's suited to build Android apps including C++ code using the Android NDK. As mentioned in the main [README.md](../README.md) file the build environment needs network connectivity to servers on the internet. We also need the environment to support the addition of various Linux packages and tools, and these need to meet various minimum versions, etc.
+We need a build platform (CI) that's suited to build Android apps including C++ code using the Android NDK. As mentioned in the main [README.md](./README.md) file the build environment needs network connectivity to servers on the internet. We also need the environment to support the addition of various Linux packages and tools, and these need to meet various minimum versions, etc.
 
 The codebase incorporates nested subprojects and therefore the CI needs to be able to checkout and process these. Travis-ci, for example by default automatically processes sub-projects but does not seem to process their respective sub-projects by default; we've found a way to make this work.
 
